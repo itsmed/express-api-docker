@@ -1,0 +1,25 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: express-api-docker
+    ports:
+      - "8080:8080"
+    env_file: ./.env
+    environment:
+      - DB_PORT=$MONGODB_DOCKER_PORT
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:noble
+    container_name: mongodb_server
+    env_file: ./.env
+    ports:
+      - "27017:27017"
+    volumes:
+      - $HOME/tmp/datadir:/data/db
+
+volumes:
+  datadir: # look into this
