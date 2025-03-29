@@ -12,7 +12,7 @@ services:
       - DB_URL=$MONGODB_DATABASE_URL
       - DB_NAME=$MONGODB_DATABASE_NAME
     depends_on:
-      - mongodb
+      - db
 
   db:
     image: mongo:noble
