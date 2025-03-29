@@ -24,4 +24,4 @@ services:
       - $HOME/tmp/datadir:/data/db
 
 volumes:
-  datadir: # look into this
+  datadir:
