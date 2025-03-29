@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const app = express();
 app.use(express.json());
-const { DB_PORT, DB_URL, DB_NAME } = process.env;
+const { DB_PORT, DB_URL, DB_NAME, PORT } = process.env;
 
 mongoose.connect(`${DB_URL}:${DB_PORT}/${DB_NAME}`)
   .then(() => console.log('mongoose connected'))
@@ -47,6 +47,5 @@ app.get('/users', async(req, res, next) => {
     next();
   }
 });
-
-const PORT = 8080;
+``
 app.listen(PORT, () => console.log(`server listening on ${PORT}`));
