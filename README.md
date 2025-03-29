@@ -13,6 +13,7 @@ production.
 1. Clone the repository.
 1. Run `pnpm install`.
 1. Ensure that `$HOME/tmp/datadir` exists.
+1. Copy the `.env.example` to `.env`
 1. Run `docker-compose up`.
 
 This will bring up the `mongodb` and `server` services and corresponding containers.

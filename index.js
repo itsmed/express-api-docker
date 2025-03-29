@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 
 const app = express();
 app.use(express.json());
-const { DB_PORT } = process.env;
+const { DB_PORT, DB_URL, DB_NAME } = process.env;
 
-mongoose.connect(`mongodb://mongodb:${DB_PORT}/test`)
+mongoose.connect(`${DB_URL}:${DB_PORT}/${DB_NAME}`)
   .then(() => console.log('mongoose connected'))
   .catch((e) => console.error(`error connecting to monogodb ${e}`));
 
